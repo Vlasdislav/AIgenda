@@ -1,0 +1,154 @@
+.main__protocol {
+  position: relative;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.protocol__content {
+  max-width: 485px;
+}
+
+.protocol__content .button {
+  margin-bottom: 150px;
+}
+
+.protocol__title {
+  font-family: 'Unbounded', sans-serif;
+  line-height: 42px;
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.protocol__description {
+  line-height: 27px;
+  font-size: 22px;
+  margin-bottom: 32px;
+}
+
+.protocol__badges {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  display: flex;
+  gap: 10px;
+  padding: 65px 17px 70px 70px;
+  border-radius: 0 60px 0 0;
+  background-color: #EBEBEB;
+}
+
+.protocol__badge {
+  padding: 5px 10px;
+  border-radius: 64px;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  font-family: 'Unbounded', sans-serif;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.protocol__badge:nth-child(1) {
+  background-color: #EC279D;
+}
+
+.protocol__badge:nth-child(2) {
+  background-color: #8793F3;
+  transform: rotate(2.39deg)
+}
+
+.protocol__badge:nth-child(3) {
+  background-color: #0E1C36;
+  transform: rotate(-6.87deg)
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.pricing__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing__description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.pricing__table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.pricing__column {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.pricing__column--header {
+  background-color: #f1f1f1;
+  font-weight: 700;
+}
+
+.pricing__row--highlight {
+  color: #e91e63;
+}
+
+.pricing__button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer__logo {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer__icon {
+  color: #fff;
+  text-decoration: none;
+}

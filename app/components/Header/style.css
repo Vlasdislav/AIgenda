@@ -2,11 +2,15 @@
     padding: 23.5px 128px;
     display: flex;
     align-items: center;
+    border-radius: 20px;
 }
 
 .header__item {
     color: #808191;
-    font-weight: bold;
+    font-family: 'Noah', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 22px;
     margin-right: 8px;
 }
 

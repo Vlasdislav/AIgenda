@@ -2,7 +2,9 @@
     background-color: #3B82F6;
     padding: 14px 24px;
     color: #ffffff;
-    font-size: 22;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
     border-radius: 6px;
 }
 
