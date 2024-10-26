@@ -1,21 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #EBEBEB;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Unbounded", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 1252px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 32px auto;
 }

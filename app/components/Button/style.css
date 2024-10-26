@@ -1,0 +1,12 @@
+.button {
+    background-color: #3B82F6;
+    padding: 14px 24px;
+    color: #ffffff;
+    font-size: 22;
+    border-radius: 6px;
+}
+
+.gray {
+    background-color: #EBEBEB;
+    padding: 9.9px;
+}
