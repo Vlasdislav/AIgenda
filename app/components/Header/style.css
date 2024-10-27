@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.header__buttons--adaptive {
+    display: none;
+}
+
 .header__buttons .button {
     padding-left: 24px;
     padding-right: 24px;
@@ -33,4 +37,23 @@
 
 .header__buttons .button:last-child {
     margin-left: 24px;
+}
+
+
+@media (max-width: 1023px) {
+    .header {
+        padding: 20px 40px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__buttons {
+        display: none;
+    }
+
+    .header__buttons--adaptive {
+        display: flex;
+    }
 }

@@ -43,3 +43,9 @@
 .footer__link:last-child, .footer__social-network:last-child {
     margin-right: 0;
 }
+
+@media (max-width: 1023px) {
+    .footer__link {
+        font-size: 18px;
+    }
+}
