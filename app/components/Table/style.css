@@ -23,18 +23,19 @@
 .pricing__cell {
   max-width: 450px;
   padding: 20px;
-  border-bottom: 1px solid #D6D6D6;
+  border-top: 1px solid #D6D6D6;
   color: #171717;
   font-size: 22px;
-  min-height: 74px;
+  line-height: 22px;
+  min-height: 75px;
 }
 
-.pricing__cell:last-child {
-  border-bottom: none;
+.pricing__cell:nth-child(1) {
+  border-top: none;
 }
 
 .pricing__cell--plan {
-  max-width: 310px;
+  min-width: 310px;
   font-size: 22px;
   line-height: 22px;
   font-weight: bold;
@@ -55,6 +56,11 @@
   line-height: 27px;
   font-weight: 600;
   height: 110px;
+}
+
+.pricing__cell--price {
+  font-weight: bold;
+  border-top: none;
 }
 
 .pricing__cell--highlight {
