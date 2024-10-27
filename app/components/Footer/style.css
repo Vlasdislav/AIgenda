@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px auto;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 .footer__nav {
@@ -23,12 +24,22 @@
     margin-right: 0;
 }
 
-.footer__item {
+.footer__link {
+    color: #808191;
+    font-family: 'Noah', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 22px;
     margin-right: 8px;
-    color: #7D7D7D;
-    font-weight: bold;
+    padding: 8px 16px;
+    display: inline-block;
+    text-align: center;
 }
 
-.footer__item:last-child {
+.footer__social-network {
+    margin-right: 24px;
+}
+
+.footer__link:last-child, .footer__social-network:last-child {
     margin-right: 0;
 }

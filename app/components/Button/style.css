@@ -1,6 +1,7 @@
 .button {
     background-color: #3B82F6;
-    padding: 14px 24px;
+    width: 100%;
+    padding: 14px 0;
     color: #ffffff;
     font-weight: bold;
     font-size: 22px;
@@ -8,7 +9,11 @@
     border-radius: 6px;
 }
 
+.button span {
+    display: ruby;
+}
+
 .gray {
     background-color: #EBEBEB;
-    padding: 9.9px;
+    padding: 9.9px !important;
 }

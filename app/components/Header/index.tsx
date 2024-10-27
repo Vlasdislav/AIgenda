@@ -7,7 +7,7 @@ export default function Header() {
       <img className="header__logo" src="/images/logo.svg" alt="AiGenda" />
       <nav className="header__nav">
         <a className="header__item" href="#">Why us?</a>
-        <a className="header__item" href="#">Pricing</a>
+        <a className="header__item" href="#pricing">Pricing</a>
         <a className="header__item" href="#">FAQ</a>
         <a className="header__item" href="#">Contacts</a>
       </nav>
