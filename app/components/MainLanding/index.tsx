@@ -23,7 +23,7 @@ export default function MainLanding() {
             <section className="pricing container" id="pricing">
                 <h2 className="pricing__title">Разные тарифы для разных задач</h2>
                 <p className="pricing__description">Подписка на сервис AiGenda станет выгодной инвестицией для любого бизнеса с регулярными онлайн встречами</p>
-                <Table />
+                {/* <Table /> */}
             </section>
       </main>
     )

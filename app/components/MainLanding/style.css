@@ -135,12 +135,51 @@
     line-height: 22px;
     margin-bottom: 48px;
   }
+}
 
-  .pricing__table {
-    flex-direction: column;
+@media (max-width: 639px) {
+  .protocol {
+    padding: 16px;
+  }
+  
+  .protocol__content {
+    width: 310px;
   }
 
-  .pricing__column--header {
-    display: none;
+  .protocol__title {
+    font-size: 26px;
+    line-height: 30px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .protocol__description {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+  .protocol__content .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .pricing {
+    padding: 16px;
+  }
+
+  .pricing__title {
+    font-size: 26px;
+    line-height: 30px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .pricing__description {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 16px;
+    margin-bottom: 32px;
   }
 }

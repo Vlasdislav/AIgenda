@@ -56,4 +56,19 @@
     .header__buttons--adaptive {
         display: flex;
     }
+
+    .header__buttons .button img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 639px) {
+    .header {
+        padding: 10px 16px;
+    }
+
+    .header__logo {
+        height: 32px;
+    }
 }
