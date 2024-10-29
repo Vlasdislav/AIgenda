@@ -67,3 +67,7 @@ body {
     border-radius: 24px;
   }
 }
+
+.hidden {
+  display: none;
+}

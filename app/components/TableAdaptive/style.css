@@ -1,0 +1,87 @@
+.table-adaptive .pricing__table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-adaptive .pricing__column {
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.table-adaptive .pricing__column:last-child {
+  margin-bottom: 0;
+}
+
+.table-adaptive .pricing__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26px;
+  line-height: 26px;
+  font-family: 'Unbounded', sans-serif;
+  padding: 8px;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.table-adaptive .pricing__price {
+  color: #171717;
+}
+
+.table-adaptive .pricing__feature {
+  padding: 8px;
+  border-bottom: 1px solid #D6D6D6;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-adaptive .pricing__feature_with-tariff::after {
+  content: 'При условии действия тарифа';
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 25px;
+}
+
+.table-adaptive .pricing__feature:last-child {
+  border-bottom: none;
+}
+
+.table-adaptive .pricing__header_max {
+  color: #EC279D;
+}
+
+.table-adaptive .pricing__header_max-mini {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 639px) {
+  .table-adaptive .pricing__header {
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  .table-adaptive .pricing__price {
+    font-size: 16px;
+  }
+
+  .table-adaptive .pricing__feature {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .table-adaptive .pricing__column {
+    margin-bottom: 32px;
+  }
+
+  .table-adaptive .pricing__header_max-mini {
+    font-size: 8px;
+    line-height: 8px;
+    padding-top: 0;
+  }
+}

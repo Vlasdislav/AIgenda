@@ -1,8 +1,39 @@
+"use client";
+
 import Button from "../Button";
-import Table from "../Table";
+import TableAdaptive from "../TableAdaptive";
+import TableDesktop from "../TableDesktop";
 import "./style.css";
+import { useEffect, useState } from "react";
 
 export default function MainLanding() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1023);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const adaptiveElement = document.querySelector(".table-adaptive");
+        const desktopElement = document.querySelector(".table-desktop");
+
+        if (isMobile && desktopElement) {
+            desktopElement.classList.add("hidden");
+            adaptiveElement && adaptiveElement.classList.remove("hidden");
+        } else if (!isMobile && adaptiveElement) {
+            adaptiveElement.classList.add("hidden");
+            desktopElement && desktopElement.classList.remove("hidden");
+        }
+    }, [isMobile]);
+
     return (
         <main className="main">
             <section className="protocol container">
@@ -23,8 +54,12 @@ export default function MainLanding() {
             <section className="pricing container" id="pricing">
                 <h2 className="pricing__title">Разные тарифы для разных задач</h2>
                 <p className="pricing__description">Подписка на сервис AiGenda станет выгодной инвестицией для любого бизнеса с регулярными онлайн встречами</p>
-                {/* <Table /> */}
+                {
+                    isMobile
+                        ? <TableAdaptive className="table-adaptive" /> 
+                        : <TableDesktop className="table-desktop" />
+                }
             </section>
-      </main>
+        </main>
     )
 }
