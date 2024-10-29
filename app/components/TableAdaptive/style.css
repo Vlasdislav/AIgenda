@@ -36,6 +36,10 @@
   flex-direction: column;
 }
 
+.table-adaptive .pricing__feature_button {
+  padding: 16px 8px !important;
+}
+
 .table-adaptive .pricing__feature_with-tariff::after {
   content: 'При условии действия тарифа';
   display: inline-block;

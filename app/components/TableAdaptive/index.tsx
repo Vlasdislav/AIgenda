@@ -14,7 +14,7 @@ const TableAdaptive: React.FC<TableAdaptiveProps> = ({className}) => {
                         <div className="pricing__plan">FREE</div>
                         <div className="pricing__price">0₽ / мес</div>
                     </div>
-                    <div className="pricing__feature"><Button text="Попробовать" /></div>
+                    <div className="pricing__feature pricing__feature_button"><Button text="Попробовать" /></div>
                         <div className="pricing__features">
                         <div className="pricing__feature">180 минут</div>
                         <div className="pricing__feature">Загрузка видео до 40 мин</div>
@@ -34,7 +34,7 @@ const TableAdaptive: React.FC<TableAdaptiveProps> = ({className}) => {
                         <div className="pricing__plan">START</div>
                         <div className="pricing__price">990₽ / мес</div>
                     </div>
-                    <div className="pricing__feature"><Button text="Купить" /></div>
+                    <div className="pricing__feature pricing__feature_button"><Button text="Купить" /></div>
                     <div className="pricing__features">
                         <div className="pricing__feature">540 минут</div>
                         <div className="pricing__feature">Загрузка видео до 1,5 часа</div>
@@ -56,7 +56,7 @@ const TableAdaptive: React.FC<TableAdaptiveProps> = ({className}) => {
                         <div className="pricing__plan pricing__header_max">MAX <br/> <span className="pricing__header_max-mini">самый популярный</span></div>
                         <div className="pricing__price pricing__header_max">1890₽ / мес</div>
                     </div>
-                    <div className="pricing__feature"><Button text="Купить" /></div>
+                    <div className="pricing__feature pricing__feature_button"><Button text="Купить" /></div>
                     <div className="pricing__features">
                         <div className="pricing__feature">1200 минут</div>
                         <div className="pricing__feature">Загрузка видео до 4 часов</div>
@@ -79,7 +79,7 @@ const TableAdaptive: React.FC<TableAdaptiveProps> = ({className}) => {
                         <div className="pricing__plan">PRO MAX</div>
                         <div className="pricing__price">3190₽ / мес</div>
                     </div>
-                    <div className="pricing__feature"><Button text="Купить" /></div>
+                    <div className="pricing__feature pricing__feature_button"><Button text="Купить" /></div>
                         <div className="pricing__features">
                         <div className="pricing__feature">2400 минут</div>
                         <div className="pricing__feature">Загрузка видео до 4 часов</div>

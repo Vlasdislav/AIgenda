@@ -41,6 +41,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Noah', 'Unbounded', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .container {
@@ -53,6 +55,11 @@ body {
 }
 
 @media (max-width: 1023px) {
+  body {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   .container {
     width: 696px;
     border-radius: 32px;
@@ -61,6 +68,11 @@ body {
 }
 
 @media (max-width: 639px) {
+  body {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
   .container {
     margin: 16px auto;
     width: 343px;
