@@ -1,94 +1,153 @@
-import Button from "../Button";
-import "./style.css";
+"use client"
 
-type TableDesktopProps = {
-    className?: string;
-};
+import styled from 'styled-components';
+import Button from '../Button';
 
-const TableDesktop: React.FC<TableDesktopProps> = ({className}) => {
-    return (
-        <div className={className}>
-            <div className="pricing__table">
-                <div className="pricing__row pricing__row_title pricing__column_header">Тариф</div>
-                <div className="pricing__row pricing__column_header">FREE</div>
-                <div className="pricing__row pricing__column_header">START</div>
-                <div className="pricing__row pricing__row_max pricing__column_header pricing__row_highlight">MAX <br/> <span className="pricing__row_highlight-mini">самый популярный</span></div>
-                <div className="pricing__row pricing__column_header">PRO MAX</div>
+const TableWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #D6D6D6;
+  font-size: 22px;
+  line-height: 22px;
+  color: #171717;
+`;
 
-                <div className="pricing__row pricing__row_title">Цена</div>
-                <div className="pricing__row pricing__row_price">0₽ / мес</div>
-                <div className="pricing__row pricing__row_price">990₽ / мес</div>
-                <div className="pricing__row pricing__row_max pricing__row_price pricing__row_highlight">1890₽ / мес</div>
-                <div className="pricing__row pricing__row_price">3190₽ / мес</div>
+const TableRow = styled.div`
+  border-right: 1px solid #D6D6D6;
+  border-top: 1px solid #D6D6D6;
+  padding: 20px;
 
-                <div className="pricing__row pricing__row_title">Опции</div>
-                <div className="pricing__row pricing__row_button"><Button text="Попробовать" /></div>
-                <div className="pricing__row pricing__row_button"><Button text="Купить" /></div>
-                <div className="pricing__row pricing__row_button pricing__row_max"><Button text="Купить" /></div>
-                <div className="pricing__row pricing__row_button"><Button text="Купить" /></div>
+  &:nth-child(5n) {
+    border-right: none;
+  }
 
-                <div className="pricing__row pricing__row_title">Минуты</div>
-                <div className="pricing__row">180</div>
-                <div className="pricing__row">540</div>
-                <div className="pricing__row pricing__row_max">1200</div>
-                <div className="pricing__row">2400</div>
+  &.price {
+    font-weight: 700;
+    border-top: none;
+  }
 
-                <div className="pricing__row pricing__row_title">Длина видео</div>
-                <div className="pricing__row">40 мин</div>
-                <div className="pricing__row">1,5 часа</div>
-                <div className="pricing__row pricing__row_max">4 часа</div>
-                <div className="pricing__row">4 часа</div>
+  &.title {
+    color: #0047FF;
+    padding-top: 10px;
+    font-weight: bold;
+    width: 310px;
+  }
 
-                <div className="pricing__row pricing__row_title">Транскрипция</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row pricing__row_max">Да</div>
-                <div className="pricing__row">Да</div>
+  &.highlight {
+    color: #EC279D;
+  }
 
-                <div className="pricing__row pricing__row_title">Протокол встречи</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row pricing__row_max">Да</div>
-                <div className="pricing__row">Да</div>
+  &.highlight-mini {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 25px;
+    display: inline-block;
+  }
 
-                <div className="pricing__row pricing__row_title">Загрузка видео</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row pricing__row_max">Да</div>
-                <div className="pricing__row">Да</div>
+  &.max {
+    background-color: #ffffff;
+  }
 
-                <div className="pricing__row pricing__row_title">Интеграция <br/> с&nbsp;площадками <br/> видеоконференций</div>
-                <div className="pricing__row">Zoom, Google <br/> Meet, Телемост</div>
-                <div className="pricing__row">Zoom, Google <br/> Meet, Телемост</div>
-                <div className="pricing__row pricing__row_max">Zoom, Google <br/> Meet, Телемост</div>
-                <div className="pricing__row">Zoom, Google <br/> Meet, Телемост</div>
+  &.button {
+    padding: 20px 16px;
+  }
+`;
 
-                <div className="pricing__row pricing__row_title">Приоритет обработки</div>
-                <div className="pricing__row">Низкий</div>
-                <div className="pricing__row">Высокий</div>
-                <div className="pricing__row pricing__row_max">Высокий</div>
-                <div className="pricing__row">Высокий</div>
+const ColumnHeader = styled(TableRow)`
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 27px;
+  font-family: 'Unbounded', sans-serif;
+  padding: 20px;
+  border-top: none;
+`;
 
-                <div className="pricing__row pricing__row_title">Редактирование транскрипции</div>
-                <div className="pricing__row">-</div>
-                <div className="pricing__row">-</div>
-                <div className="pricing__row pricing__row_max">Да</div>
-                <div className="pricing__row">Да</div>
+const TableDesktop = () => {
+  return (
+    <TableWrapper>
+      <ColumnHeader>Тариф</ColumnHeader>
+      <ColumnHeader>FREE</ColumnHeader>
+      <ColumnHeader>START</ColumnHeader>
+      <ColumnHeader className="highlight">MAX <br/><span className="highlight-mini">самый популярный</span></ColumnHeader>
+      <ColumnHeader>PRO MAX</ColumnHeader>
 
-                <div className="pricing__row pricing__row_title">Экспорт конспекта</div>
-                <div className="pricing__row">-</div>
-                <div className="pricing__row">Да</div>
-                <div className="pricing__row pricing__row_max">Да</div>
-                <div className="pricing__row">Да</div>
+      <TableRow className="title">Цена</TableRow>
+      <TableRow className="price">0₽ / мес</TableRow>
+      <TableRow className="price">990₽ / мес</TableRow>
+      <TableRow className="price highlight">1890₽ / мес</TableRow>
+      <TableRow className="price">3190₽ / мес</TableRow>
 
-                <div className="pricing__row pricing__row_title">Возможность делиться записью</div>
-                <div className="pricing__row">По ссылке</div>
-                <div className="pricing__row">По ссылке</div>
-                <div className="pricing__row pricing__row_max">По ссылке</div>
-                <div className="pricing__row">По ссылке</div>
-            </div>
-        </div>
-    )
+      <TableRow className="title">Опции</TableRow>
+      <TableRow className="button"><Button text="Попробовать" /></TableRow>
+      <TableRow className="button"><Button text="Купить" /></TableRow>
+      <TableRow className="button max"><Button text="Купить" /></TableRow>
+      <TableRow className="button"><Button text="Купить" /></TableRow>
+
+      <TableRow className="title">Минуты</TableRow>
+      <TableRow>180</TableRow>
+      <TableRow>540</TableRow>
+      <TableRow className="max">1200</TableRow>
+      <TableRow>2400</TableRow>
+
+      <TableRow className="title">Длина видео</TableRow>
+      <TableRow>40 мин</TableRow>
+      <TableRow>1,5 часа</TableRow>
+      <TableRow className="max">4 часа</TableRow>
+      <TableRow>4 часа</TableRow>
+
+      <TableRow className="title">Транскрипция</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow className="max">Да</TableRow>
+      <TableRow>Да</TableRow>
+
+      <TableRow className="title">Протокол встречи</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow className="max">Да</TableRow>
+      <TableRow>Да</TableRow>
+
+      <TableRow className="title">Загрузка видео</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow className="max">Да</TableRow>
+      <TableRow>Да</TableRow>
+
+      <TableRow className="title">Интеграция с площадками видеоконференций</TableRow>
+      <TableRow>Zoom, Google Meet, Телемост</TableRow>
+      <TableRow>Zoom, Google Meet, Телемост</TableRow>
+      <TableRow className="max">Zoom, Google Meet, Телемост</TableRow>
+      <TableRow>Zoom, Google Meet, Телемост</TableRow>
+
+      <TableRow className="title">Приоритет обработки</TableRow>
+      <TableRow>Низкий</TableRow>
+      <TableRow>Высокий</TableRow>
+      <TableRow className="max">Высокий</TableRow>
+      <TableRow>Высокий</TableRow>
+
+      <TableRow className="title">Редактирование транскрипции</TableRow>
+      <TableRow>-</TableRow>
+      <TableRow>-</TableRow>
+      <TableRow className="max">Да</TableRow>
+      <TableRow>Да</TableRow>
+
+      <TableRow className="title">Экспорт конспекта</TableRow>
+      <TableRow>-</TableRow>
+      <TableRow>Да</TableRow>
+      <TableRow className="max">Да</TableRow>
+      <TableRow>Да</TableRow>
+
+      <TableRow className="title">Возможность делиться записью</TableRow>
+      <TableRow>По ссылке</TableRow>
+      <TableRow>По ссылке</TableRow>
+      <TableRow className="max">По ссылке</TableRow>
+      <TableRow>По ссылке</TableRow>
+    </TableWrapper>
+  );
 }
 
 export default TableDesktop;
