@@ -1,5 +1,3 @@
-"use client"
-
 import styled from 'styled-components';
 import Button from "../Button";
 
@@ -39,12 +37,11 @@ const PricingHeader = styled.div`
   }
 `;
 
-const PricingPlan = styled.div<{highlight?: boolean}>`
-  color: ${props => props.highlight ? '#EC279D' : '#171717'};
+const PricingPlan = styled.div<{$highlight?: boolean}>`
+  color: ${props => props.$highlight ? '#EC279D' : '#171717'};
 `;
 
-const PricingPrice = styled.div`
-  color: #171717;
+const PricingPrice = styled(PricingPlan)`
   font-size: 16px;
 
   @media (max-width: 639px) {
@@ -76,7 +73,7 @@ const PricingFeature = styled.div`
   }
 `;
 
-const HighlightText = styled.span`
+const HighlightText = styled(PricingPlan)`
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
@@ -141,8 +138,8 @@ const TableAdaptive: React.FC<TableAdaptiveProps> = ({ className }) => {
 
       <PricingColumn>
         <PricingHeader>
-          <PricingPlan highlight>MAX <HighlightText>самый популярный</HighlightText></PricingPlan>
-          <PricingPrice>1890₽ / мес</PricingPrice>
+          <PricingPlan $highlight>MAX <br/> <HighlightText $highlight>самый популярный</HighlightText></PricingPlan>
+          <PricingPrice $highlight>1890₽ / мес</PricingPrice>
         </PricingHeader>
         <ButtonFeature><Button text="Купить" /></ButtonFeature>
         <PricingFeature>1200 минут</PricingFeature>

@@ -84,6 +84,20 @@ const ProtocolDescription = styled.p`
   }
 `;
 
+const ProtocolImage = styled.div`
+  @media (max-width: 1535px) {
+    width: 600px;
+  }
+
+  @media (max-width: 1279px) {
+    width: 360px;
+  }
+
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+`
+
 const ProtocolBadges = styled.div`
   position: absolute;
   left: 0;
@@ -205,9 +219,9 @@ export default function MainLanding() {
                         <ProtocolBadge><span style={{ fontFamily: "Noah, sans-serif", fontSize: "12px", lineHeight: "12px" }}>обработано</span><span style={{ fontSize: "15px", lineHeight: "15px" }}>1 млн часов</span></ProtocolBadge>
                     </ProtocolBadges>
                 </ProtocolContent>
-                <div className="protocol__image">
+                <ProtocolImage>
                     <img src="./images/CallingApp.svg" alt="Конференция с AiGenda Bot" />
-                </div>
+                </ProtocolImage>
             </ProtocolSection>
             <PricingSection className="pricing container" id="pricing">
                 <PricingTitle>Разные тарифы для разных задач</PricingTitle>

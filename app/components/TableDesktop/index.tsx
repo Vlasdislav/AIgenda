@@ -1,5 +1,3 @@
-"use client"
-
 import styled from 'styled-components';
 import Button from '../Button';
 
@@ -36,24 +34,16 @@ const TableRow = styled.div`
     width: 310px;
   }
 
-  &.highlight {
-    color: #EC279D;
-  }
-
-  &.highlight-mini {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
-    padding-top: 25px;
-    display: inline-block;
-  }
-
   &.max {
     background-color: #ffffff;
   }
 
   &.button {
     padding: 20px 16px;
+  }
+
+  &.highlight {
+    color: #EC279D;
   }
 `;
 
@@ -66,13 +56,21 @@ const ColumnHeader = styled(TableRow)`
   border-top: none;
 `;
 
+const HighlightText = styled.span`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  padding-top: 25px;
+  display: inline-block;
+`
+
 const TableDesktop = () => {
   return (
     <TableWrapper>
       <ColumnHeader>Тариф</ColumnHeader>
       <ColumnHeader>FREE</ColumnHeader>
       <ColumnHeader>START</ColumnHeader>
-      <ColumnHeader className="highlight">MAX <br/><span className="highlight-mini">самый популярный</span></ColumnHeader>
+      <ColumnHeader className="highlight">MAX <br/> <HighlightText>самый популярный</HighlightText></ColumnHeader>
       <ColumnHeader>PRO MAX</ColumnHeader>
 
       <TableRow className="title">Цена</TableRow>

@@ -1,5 +1,3 @@
-"use client"
-
 import styled from "styled-components";
 
 const ButtonTag = styled.button<{ $primary?:boolean }>`
