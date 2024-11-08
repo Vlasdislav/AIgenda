@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { useState } from 'react';
-import Button from '../Button';
+import Button from '../ui/button';
 
 const HeaderTag = styled.header`
   padding: 23.5px 128px;

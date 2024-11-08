@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {this.props.styleTags}
+          {this.props.styles}
         </Head>
         <body>
           <Main />

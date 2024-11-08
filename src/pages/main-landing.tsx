@@ -1,12 +1,12 @@
 "use client"
 
 import styled from 'styled-components';
-import Button from '../Button';
+import Button from '../components/ui/button';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 
-const TableAdaptive = dynamic(() => import('../TableAdaptive'), { ssr: false });
-const TableDesktop = dynamic(() => import('../TableDesktop'), { ssr: false });
+const TableAdaptive = dynamic(() => import('../components/ui/table-adaptive'), { ssr: false });
+const TableDesktop = dynamic(() => import('../components/ui/table-desktop'), { ssr: false });
 
 const Main = styled.main`
     display: flex;
