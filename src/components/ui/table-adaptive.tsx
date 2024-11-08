@@ -37,8 +37,12 @@ const PricingHeader = styled.div`
   }
 `;
 
-const PricingPlan = styled.div<{$highlight?: boolean}>`
+const PricingPlan = styled.div<{ $highlight?: boolean }>`
   color: ${props => props.$highlight ? '#EC279D' : '#171717'};
+
+  &.highlight {
+    color: #EC279D;
+  }
 `;
 
 const PricingPrice = styled(PricingPlan)`
@@ -91,92 +95,110 @@ const ButtonFeature = styled(PricingFeature)`
   padding: 16px 8px !important;
 `;
 
-type TableAdaptiveProps = {
-  className?: string;
+type Plan = {
+  name: string;
+  price: string;
+  features: string[];
+  highlight?: boolean;
+  withTariffNote?: boolean;
 };
 
-const TableAdaptive: React.FC<TableAdaptiveProps> = ({ className }) => {
+const plans: Plan[] = [
+  {
+    name: 'FREE',
+    price: '0₽ / мес',
+    features: [
+      '180 минут',
+      'Загрузка видео до 40 мин',
+      'Есть транскрипция',
+      'Редактирование транскрипции',
+      'Протокол встречи',
+      'Экспорт конспекта',
+      'Интеграция Zoom, Google Meet, Telemost',
+      'Низкий приоритет обработки',
+      'Возможность делиться записью по ссылке',
+      'Хранение файлов 3 месяца',
+    ],
+  },
+  {
+    name: 'START',
+    price: '990₽ / мес',
+    features: [
+      '540 минут',
+      'Загрузка видео до 1,5 часа',
+      'Есть транскрипция',
+      'Редактирование транскрипции',
+      'Протокол встречи',
+      'Переименовывание до 5 спикеров',
+      'Тэги',
+      'Экспорт конспекта',
+      'Возможность делиться записью по ссылке',
+      'Интеграция Zoom, Google Meet, Telemost',
+      'Высокий приоритет обработки',
+      'Хранение файлов 1 год',
+    ],
+    withTariffNote: true,
+  },
+  {
+    name: 'MAX',
+    price: '1890₽ / мес',
+    features: [
+      '1200 минут',
+      'Загрузка видео до 4 часов',
+      'Есть транскрипция',
+      'Редактирование транскрипции',
+      'Экспорт конспекта',
+      'Протокол встречи',
+      'Интеграция Zoom, Google Meet, Telemost',
+      'Высокий приоритет обработки',
+      'Хранение файлов безлимитное',
+      'Тэги',
+      'Переименовывание до 20 спикеров',
+      'Создание папок',
+      'Возможность делиться записью по ссылке',
+    ],
+    highlight: true,
+    withTariffNote: true,
+  },
+  {
+    name: 'PRO MAX',
+    price: '3190₽ / мес',
+    features: [
+      '2400 минут',
+      'Загрузка видео до 4 часов',
+      'Есть транскрипция',
+      'Редактирование транскрипции',
+      'Экспорт конспекта',
+      'Протокол встречи',
+      'Интеграция Zoom, Google Meet, Telemost',
+      'Высокий приоритет обработки',
+      'Хранение файлов безлимитное',
+      'Тэги',
+      'Переименовывание до 40 спикеров',
+      'Создание папок',
+      'Возможность делиться записью по ссылке',
+    ],
+    withTariffNote: true,
+  },
+];
+
+const TableAdaptive: React.FC = () => {
   return (
-    <TableWrapper className={className}>
-      <PricingColumn>
-        <PricingHeader>
-          <PricingPlan>FREE</PricingPlan>
-          <PricingPrice>0₽ / мес</PricingPrice>
-        </PricingHeader>
-        <ButtonFeature><Button text="Попробовать" /></ButtonFeature>
-        <PricingFeature>180 минут</PricingFeature>
-        <PricingFeature>Загрузка видео до 40 мин</PricingFeature>
-        <PricingFeature>Есть транскрипция</PricingFeature>
-        <PricingFeature>Редактирование транскрипции</PricingFeature>
-        <PricingFeature>Протокол встречи</PricingFeature>
-        <PricingFeature>Экспорт конспекта</PricingFeature>
-        <PricingFeature>Интеграция Zoom, Google Meet, Telemost</PricingFeature>
-        <PricingFeature>Низкий приоритет обработки</PricingFeature>
-        <PricingFeature>Возможность делиться записью по ссылке</PricingFeature>
-        <PricingFeature>Хранение файлов 3 месяца</PricingFeature>
-      </PricingColumn>
-
-      <PricingColumn>
-        <PricingHeader>
-          <PricingPlan>START</PricingPlan>
-          <PricingPrice>990₽ / мес</PricingPrice>
-        </PricingHeader>
-        <ButtonFeature><Button text="Купить" /></ButtonFeature>
-        <PricingFeature>540 минут</PricingFeature>
-        <PricingFeature>Загрузка видео до 1,5 часа</PricingFeature>
-        <PricingFeature>Есть транскрипция</PricingFeature>
-        <PricingFeature>Редактирование транскрипции</PricingFeature>
-        <PricingFeature>Протокол встречи</PricingFeature>
-        <PricingFeature>Переименовывание до 5 спикеров</PricingFeature>
-        <PricingFeature>Тэги</PricingFeature>
-        <PricingFeature>Экспорт конспекта</PricingFeature>
-        <PricingFeature>Возможность делиться записью по ссылке</PricingFeature>
-        <PricingFeature>Интеграция Zoom, Google Meet, Telemost</PricingFeature>
-        <PricingFeature>Высокий приоритет обработки</PricingFeature>
-        <PricingFeature className="with-tariff">Хранение файлов 1 год</PricingFeature>
-      </PricingColumn>
-
-      <PricingColumn>
-        <PricingHeader>
-          <PricingPlan $highlight>MAX <br/> <HighlightText $highlight>самый популярный</HighlightText></PricingPlan>
-          <PricingPrice $highlight>1890₽ / мес</PricingPrice>
-        </PricingHeader>
-        <ButtonFeature><Button text="Купить" /></ButtonFeature>
-        <PricingFeature>1200 минут</PricingFeature>
-        <PricingFeature>Загрузка видео до 4 часов</PricingFeature>
-        <PricingFeature>Есть транскрипция</PricingFeature>
-        <PricingFeature>Редактирование транскрипции</PricingFeature>
-        <PricingFeature>Экспорт конспекта</PricingFeature>
-        <PricingFeature>Протокол встречи</PricingFeature>
-        <PricingFeature>Интеграция Zoom, Google Meet, Telemost</PricingFeature>
-        <PricingFeature>Высокий приоритет обработки</PricingFeature>
-        <PricingFeature className="with-tariff">Хранение файлов безлимитное</PricingFeature>
-        <PricingFeature>Тэги</PricingFeature>
-        <PricingFeature>Переименовывание до 20 спикеров</PricingFeature>
-        <PricingFeature>Создание папок</PricingFeature>
-        <PricingFeature>Возможность делиться записью по ссылке</PricingFeature>
-      </PricingColumn>
-
-      <PricingColumn>
-        <PricingHeader>
-          <PricingPlan>PRO MAX</PricingPlan>
-          <PricingPrice>3190₽ / мес</PricingPrice>
-        </PricingHeader>
-        <ButtonFeature><Button text="Купить" /></ButtonFeature>
-        <PricingFeature>2400 минут</PricingFeature>
-        <PricingFeature>Загрузка видео до 4 часов</PricingFeature>
-        <PricingFeature>Есть транскрипция</PricingFeature>
-        <PricingFeature>Редактирование транскрипции</PricingFeature>
-        <PricingFeature>Экспорт конспекта</PricingFeature>
-        <PricingFeature>Протокол встречи</PricingFeature>
-        <PricingFeature>Интеграция Zoom, Google Meet, Telemost</PricingFeature>
-        <PricingFeature>Высокий приоритет обработки</PricingFeature>
-        <PricingFeature className="with-tariff">Хранение файлов безлимитное</PricingFeature>
-        <PricingFeature>Тэги</PricingFeature>
-        <PricingFeature>Переименовывание до 40 спикеров</PricingFeature>
-        <PricingFeature>Создание папок</PricingFeature>
-        <PricingFeature>Возможность делиться записью по ссылке</PricingFeature>
-      </PricingColumn>
+    <TableWrapper>
+      {plans.map((plan, index) => (
+        <PricingColumn key={index}>
+          <PricingHeader>
+            <PricingPlan $highlight={plan.highlight}>{plan.name} {plan.highlight && <><br/><HighlightText $highlight>самый популярный</HighlightText></>}</PricingPlan>
+            <PricingPrice $highlight={plan.highlight}>{plan.price}</PricingPrice>
+          </PricingHeader>
+          <ButtonFeature><Button text={plan.name === 'FREE' ? "Попробовать" : "Купить"} /></ButtonFeature>
+          {plan.features.map((feature, i) => (
+            <PricingFeature key={i} className={plan.withTariffNote && i === plan.features.length - 1 ? 'with-tariff' : ''}>
+              {feature}
+            </PricingFeature>
+          ))}
+        </PricingColumn>
+      ))}
     </TableWrapper>
   );
 };

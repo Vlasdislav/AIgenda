@@ -207,35 +207,35 @@ export default function MainLanding() {
     }, []);
 
     return (
-        <Main>
-            <ProtocolSection className="container">
-                <ProtocolContent>
-                    <ProtocolTitle>Автоматический протокол встречи</ProtocolTitle>
-                    <ProtocolDescription>AiGenda быстро и качественно переводит речь в текст и создает автоматический протокол встречи при помощи искусственного интеллекта</ProtocolDescription>
-                    <Button text="Начать работу" />
-                    <ProtocolBadges>
-                        <ProtocolBadge><span style={{ fontSize: "22px", lineHeight: "22px" }}>98%</span><span style={{ fontSize: "12px", lineHeight: "12px" }}>точность</span></ProtocolBadge>
-                        <ProtocolBadge><span>Лучше,</span><span>чем ChatGPT*</span></ProtocolBadge>
-                        <ProtocolBadge><span style={{ fontFamily: "Noah, sans-serif", fontSize: "12px", lineHeight: "12px" }}>обработано</span><span style={{ fontSize: "15px", lineHeight: "15px" }}>1 млн часов</span></ProtocolBadge>
-                    </ProtocolBadges>
-                </ProtocolContent>
-                <ProtocolImage>
-                    <img src="./images/CallingApp.svg" alt="Конференция с AiGenda Bot" />
-                </ProtocolImage>
-            </ProtocolSection>
-            <PricingSection className="pricing container" id="pricing">
-                <PricingTitle>Разные тарифы для разных задач</PricingTitle>
-                <PricingDescription>Подписка на сервис AiGenda станет выгодной инвестицией для любого бизнеса с регулярными онлайн встречами</PricingDescription>
-                {isMobile ? (
-                    <div className="table-adaptive">
-                        <TableAdaptive />
-                    </div>
-                ) : (
-                    <div className="table-desktop">
-                        <TableDesktop />
-                    </div>
-                )}
-            </PricingSection>
-        </Main>
+      <Main>
+        <ProtocolSection className="container">
+            <ProtocolContent>
+                <ProtocolTitle>Автоматический протокол встречи</ProtocolTitle>
+                <ProtocolDescription>AiGenda быстро и качественно переводит речь в текст и создает автоматический протокол встречи при помощи искусственного интеллекта</ProtocolDescription>
+                <Button text="Начать работу" />
+                <ProtocolBadges>
+                    <ProtocolBadge><span style={{ fontSize: "22px", lineHeight: "22px" }}>98%</span><span style={{ fontSize: "12px", lineHeight: "12px" }}>точность</span></ProtocolBadge>
+                    <ProtocolBadge><span>Лучше,</span><span>чем ChatGPT*</span></ProtocolBadge>
+                    <ProtocolBadge><span style={{ fontFamily: "Noah, sans-serif", fontSize: "12px", lineHeight: "12px" }}>обработано</span><span style={{ fontSize: "15px", lineHeight: "15px" }}>1 млн часов</span></ProtocolBadge>
+                </ProtocolBadges>
+            </ProtocolContent>
+            <ProtocolImage>
+              <img src="./images/CallingApp.svg" alt="Конференция с AiGenda Bot" />
+            </ProtocolImage>
+        </ProtocolSection>
+        <PricingSection className="pricing container" id="pricing">
+            <PricingTitle>Разные тарифы для разных задач</PricingTitle>
+            <PricingDescription>Подписка на сервис AiGenda станет выгодной инвестицией для любого бизнеса с регулярными онлайн встречами</PricingDescription>
+            {isMobile ? (
+                <div className="table-adaptive">
+                    <TableAdaptive />
+                </div>
+            ) : (
+                <div className="table-desktop">
+                    <TableDesktop />
+                </div>
+            )}
+        </PricingSection>
+      </Main>
     )
 }

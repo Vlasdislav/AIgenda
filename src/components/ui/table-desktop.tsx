@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './button';
+import React from 'react';
 
 const TableWrapper = styled.div`
   display: grid;
@@ -62,88 +63,52 @@ const HighlightText = styled.span`
   line-height: 14px;
   padding-top: 25px;
   display: inline-block;
-`
+`;
+
+const pricingData = [
+  { plan: 'FREE', price: '0₽ / мес', options: ['Попробовать', '180', '40 мин', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Низкий', '-', '-', 'По ссылке'] },
+  { plan: 'START', price: '990₽ / мес', options: ['Купить', '540', '1,5 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', '-', 'Да', 'По ссылке'] },
+  { plan: 'MAX', price: '1890₽ / мес', options: ['Купить', '1200', '4 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', 'Да', 'Да', 'По ссылке'], highlight: true },
+  { plan: 'PRO MAX', price: '3190₽ / мес', options: ['Купить', '2400', '4 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', 'Да', 'Да', 'По ссылке'] },
+];
+
+const namesRows = ['Минуты', 'Длина видео', 'Транскрипция', 'Протокол встречи', 'Загрузка видео', 'Интеграция с площадками видеоконференций', 'Приоритет обработки', 'Редактирование транскрипции', 'Экспорт конспекта', 'Возможность делиться записью']
 
 const TableDesktop = () => {
   return (
     <TableWrapper>
       <ColumnHeader>Тариф</ColumnHeader>
-      <ColumnHeader>FREE</ColumnHeader>
-      <ColumnHeader>START</ColumnHeader>
-      <ColumnHeader className="highlight">MAX <br/> <HighlightText>самый популярный</HighlightText></ColumnHeader>
-      <ColumnHeader>PRO MAX</ColumnHeader>
+      {pricingData.map((data, index) => (
+        <ColumnHeader key={index} className={data.highlight ? 'highlight' : ''}>
+          {data.plan}
+          {data.highlight && <HighlightText>самый популярный</HighlightText>}
+        </ColumnHeader>
+      ))}
 
       <TableRow className="title">Цена</TableRow>
-      <TableRow className="price">0₽ / мес</TableRow>
-      <TableRow className="price">990₽ / мес</TableRow>
-      <TableRow className="price highlight">1890₽ / мес</TableRow>
-      <TableRow className="price">3190₽ / мес</TableRow>
+      {pricingData.map((data, index) => (
+        <TableRow key={index} className={`price ${data.highlight ? 'highlight' : ''}`}>
+          {data.price}
+        </TableRow>
+      ))}
 
       <TableRow className="title">Опции</TableRow>
-      <TableRow className="button"><Button text="Попробовать" /></TableRow>
-      <TableRow className="button"><Button text="Купить" /></TableRow>
-      <TableRow className="button max"><Button text="Купить" /></TableRow>
-      <TableRow className="button"><Button text="Купить" /></TableRow>
+      {pricingData.map((data, index) => (
+        <TableRow key={index} className={`button ${data.highlight ? 'max' : ''}`}>
+          <Button text={data.options[0]} />
+        </TableRow>
+      ))}
 
-      <TableRow className="title">Минуты</TableRow>
-      <TableRow>180</TableRow>
-      <TableRow>540</TableRow>
-      <TableRow className="max">1200</TableRow>
-      <TableRow>2400</TableRow>
-
-      <TableRow className="title">Длина видео</TableRow>
-      <TableRow>40 мин</TableRow>
-      <TableRow>1,5 часа</TableRow>
-      <TableRow className="max">4 часа</TableRow>
-      <TableRow>4 часа</TableRow>
-
-      <TableRow className="title">Транскрипция</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow className="max">Да</TableRow>
-      <TableRow>Да</TableRow>
-
-      <TableRow className="title">Протокол встречи</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow className="max">Да</TableRow>
-      <TableRow>Да</TableRow>
-
-      <TableRow className="title">Загрузка видео</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow className="max">Да</TableRow>
-      <TableRow>Да</TableRow>
-
-      <TableRow className="title">Интеграция с площадками видеоконференций</TableRow>
-      <TableRow>Zoom, Google Meet, Телемост</TableRow>
-      <TableRow>Zoom, Google Meet, Телемост</TableRow>
-      <TableRow className="max">Zoom, Google Meet, Телемост</TableRow>
-      <TableRow>Zoom, Google Meet, Телемост</TableRow>
-
-      <TableRow className="title">Приоритет обработки</TableRow>
-      <TableRow>Низкий</TableRow>
-      <TableRow>Высокий</TableRow>
-      <TableRow className="max">Высокий</TableRow>
-      <TableRow>Высокий</TableRow>
-
-      <TableRow className="title">Редактирование транскрипции</TableRow>
-      <TableRow>-</TableRow>
-      <TableRow>-</TableRow>
-      <TableRow className="max">Да</TableRow>
-      <TableRow>Да</TableRow>
-
-      <TableRow className="title">Экспорт конспекта</TableRow>
-      <TableRow>-</TableRow>
-      <TableRow>Да</TableRow>
-      <TableRow className="max">Да</TableRow>
-      <TableRow>Да</TableRow>
-
-      <TableRow className="title">Возможность делиться записью</TableRow>
-      <TableRow>По ссылке</TableRow>
-      <TableRow>По ссылке</TableRow>
-      <TableRow className="max">По ссылке</TableRow>
-      <TableRow>По ссылке</TableRow>
+      {namesRows.map((title, idx) => (
+        <React.Fragment key={idx}>
+          <TableRow className="title">{title}</TableRow>
+          {pricingData.map((data, index) => (
+            <TableRow key={index} className={data.highlight ? 'max' : ''}>
+              {data.options[idx + 1]}
+            </TableRow>
+          ))}
+        </React.Fragment>
+      ))}
     </TableWrapper>
   );
 }
