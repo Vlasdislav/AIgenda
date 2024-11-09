@@ -84,10 +84,10 @@ type pricingDataType = {
 }
 
 const pricingData: pricingDataType[] = [
-  { plan: 'FREE', price: 0, options: ['Попробовать', '180', '40 мин', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Низкий', '-', '-', 'По ссылке'] },
-  { plan: 'START', price: 990, options: ['Купить', '540', '1,5 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', '-', 'Да', 'По ссылке'] },
-  { plan: 'MAX', price: 1890, options: ['Купить', '1200', '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'], highlight: true },
-  { plan: 'PRO MAX', price: 3190, options: ['Купить', '2400', '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'] },
+  { plan: 'FREE', price: 0, options: ['Попробовать', 180, '40 мин', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Низкий', '-', '-', 'По ссылке'] },
+  { plan: 'START', price: 990, options: ['Купить', 540, '1,5 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', '-', 'Да', 'По ссылке'] },
+  { plan: 'MAX', price: 1890, options: ['Купить', 1200, '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'], highlight: true },
+  { plan: 'PRO MAX', price: 3190, options: ['Купить', 2400, '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'] },
 ];
 
 const namesRows = ['Минуты', 'Длина видео', 'Транскрипция', 'Протокол встречи', 'Загрузка видео', <span>Интеграция <br/> с площадками <br/> видеоконференций</span>, 'Приоритет обработки', 'Редактирование транскрипции', 'Экспорт конспекта', 'Возможность делиться записью']
@@ -106,7 +106,7 @@ const TableDesktop = () => {
       <TableRow className="title">Цена</TableRow>
       {pricingData.map((data, index) => (
         <TableRow key={index} className={`price ${data.highlight ? 'highlight' : ''}`}>
-          {`${data.price}₽ / мес`}
+          <span>{`${data.price}₽ / мес`}</span>
         </TableRow>
       ))}
 

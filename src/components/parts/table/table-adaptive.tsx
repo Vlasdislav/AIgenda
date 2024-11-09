@@ -97,7 +97,7 @@ const ButtonFeature = styled(PricingFeature)`
 
 type Plan = {
   name: string;
-  price: string;
+  price: number;
   features: string[];
   highlight?: boolean;
   withTariffNote?: number;
@@ -106,7 +106,7 @@ type Plan = {
 const plans: Plan[] = [
   {
     name: 'FREE',
-    price: '0₽ / мес',
+    price: 0,
     features: [
       '180 минут',
       'Загрузка видео до 40 мин',
@@ -122,7 +122,7 @@ const plans: Plan[] = [
   },
   {
     name: 'START',
-    price: '990₽ / мес',
+    price: 990,
     features: [
       '540 минут',
       'Загрузка видео до 1,5 часа',
@@ -141,7 +141,7 @@ const plans: Plan[] = [
   },
   {
     name: 'MAX',
-    price: '1890₽ / мес',
+    price: 1890,
     features: [
       '1200 минут',
       'Загрузка видео до 4 часов',
@@ -162,7 +162,7 @@ const plans: Plan[] = [
   },
   {
     name: 'PRO MAX',
-    price: '3190₽ / мес',
+    price: 3190,
     features: [
       '2400 минут',
       'Загрузка видео до 4 часов',
@@ -189,7 +189,7 @@ const TableAdaptive: React.FC = () => {
         <PricingColumn key={index}>
           <PricingHeader>
             <PricingPlan $highlight={plan.highlight}>{plan.name} {plan.highlight && <><br/><HighlightText $highlight>самый популярный</HighlightText></>}</PricingPlan>
-            <PricingPrice $highlight={plan.highlight}>{plan.price}</PricingPrice>
+            <PricingPrice $highlight={plan.highlight}>{`${plan.price}₽ / мес`}</PricingPrice>
           </PricingHeader>
           <ButtonFeature><ButtonTable text={plan.name === 'FREE' ? "Попробовать" : "Купить"} /></ButtonFeature>
           {plan.features.map((feature, i) => (

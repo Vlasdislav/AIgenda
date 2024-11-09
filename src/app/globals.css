@@ -1,32 +1,5 @@
 @import url('https:/fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-
-@font-face {
-  font-family: 'Noah';
-  src: local('Noah Regular Italic'), local('Noah-RegularItalic'), url('/fonts/noah/Noahregularitalic.woff2') format('woff2'), url('/fonts/noah/Noahregularitalic.woff') format('woff'), url('/fonts/noah/Noahregularitalic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Noah';
-  src: local('Noah Regular'), local('Noah-Regular'), url('/fonts/noah/Noahregular.woff2') format('woff2'), url('/fonts/noah/Noahregular.woff') format('woff'), url('/fonts/noah/Noahregular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Noah';
-  src: local('Noah Bold Italic'), local('Noah-BoldItalic'), url('/fonts/noah/Noahbolditalic.woff2') format('woff2'), url('/fonts/noah/Noahbolditalic.woff') format('woff'), url('/fonts/noah/Noahbolditalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Noah';
-  src: local('Noah Bold'), local('Noah-Bold'), url('/fonts/noah/Noahbold.woff2') format('woff2'), url('/fonts/noah/Noahbold.woff') format('woff'), url('/fonts/noah/Noahbold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
+@import url("../../public/fonts/noah/stylesheet.css");
 
 @tailwind base;
 @tailwind components;
