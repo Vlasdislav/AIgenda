@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from "./button";
+import ButtonTable from './ui/button-table';
 
 const TableWrapper = styled.div`
   display: flex;
@@ -191,7 +191,7 @@ const TableAdaptive: React.FC = () => {
             <PricingPlan $highlight={plan.highlight}>{plan.name} {plan.highlight && <><br/><HighlightText $highlight>самый популярный</HighlightText></>}</PricingPlan>
             <PricingPrice $highlight={plan.highlight}>{plan.price}</PricingPrice>
           </PricingHeader>
-          <ButtonFeature><Button text={plan.name === 'FREE' ? "Попробовать" : "Купить"} /></ButtonFeature>
+          <ButtonFeature><ButtonTable text={plan.name === 'FREE' ? "Попробовать" : "Купить"} /></ButtonFeature>
           {plan.features.map((feature, i) => (
             <PricingFeature key={i} className={plan.withTariffNote && i === plan.features.length - 1 ? 'with-tariff' : ''}>
               {feature}

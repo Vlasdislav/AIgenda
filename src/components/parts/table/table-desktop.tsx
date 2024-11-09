@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import Button from './button';
 import React from 'react';
+import ButtonTable from './ui/button-table';
 
 const TableWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   background-color: #FAFAFA;
   border-radius: 20px;
-  overflow: hidden;
   border: 1px solid #D6D6D6;
   font-size: 22px;
   line-height: 22px;
@@ -40,7 +39,7 @@ const TableRow = styled.div`
   }
 
   &.button {
-    padding: 20px 16px;
+    padding: 20.5px 16px;
   }
 
   &.highlight {
@@ -95,7 +94,7 @@ const TableDesktop = () => {
       <TableRow className="title">Опции</TableRow>
       {pricingData.map((data, index) => (
         <TableRow key={index} className={`button ${data.highlight ? 'max' : ''}`}>
-          <Button text={data.options[0]} />
+          <ButtonTable text={data.options[0]} />
         </TableRow>
       ))}
 

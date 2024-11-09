@@ -2,15 +2,13 @@
 
 import styled from 'styled-components';
 import Button from '../components/ui/button';
-import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-
-const TableAdaptive = dynamic(() => import('../components/ui/table-adaptive'), { ssr: false });
-const TableDesktop = dynamic(() => import('../components/ui/table-desktop'), { ssr: false });
+import TableAdaptive from '../components/parts/table/table-adaptive';
+import TableDesktop from '../components/parts/table/table-desktop';
 
 const Main = styled.main`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ProtocolSection = styled.section`
@@ -230,7 +228,7 @@ export default function MainLanding() {
                 <div className="table-adaptive">
                     <TableAdaptive />
                 </div>
-            ) : (
+              ) : (
                 <div className="table-desktop">
                     <TableDesktop />
                 </div>
