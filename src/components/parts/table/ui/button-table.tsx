@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { ButtonTag } from "../../../ui/button";
+import React from "react";
 
 const ButtonTableTag = styled(ButtonTag)`
     width: 100%;
 `;
 
 type ButtonProps = {
-    text?: string;
+    text?: React.ReactNode;
     icon?: React.ReactNode;
     primary?: boolean;
     onClick?: () => void;

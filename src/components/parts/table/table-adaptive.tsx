@@ -100,7 +100,7 @@ type Plan = {
   price: string;
   features: string[];
   highlight?: boolean;
-  withTariffNote?: boolean;
+  withTariffNote?: number;
 };
 
 const plans: Plan[] = [
@@ -137,7 +137,7 @@ const plans: Plan[] = [
       'Высокий приоритет обработки',
       'Хранение файлов 1 год',
     ],
-    withTariffNote: true,
+    withTariffNote: 11,
   },
   {
     name: 'MAX',
@@ -158,7 +158,7 @@ const plans: Plan[] = [
       'Возможность делиться записью по ссылке',
     ],
     highlight: true,
-    withTariffNote: true,
+    withTariffNote: 8,
   },
   {
     name: 'PRO MAX',
@@ -178,7 +178,7 @@ const plans: Plan[] = [
       'Создание папок',
       'Возможность делиться записью по ссылке',
     ],
-    withTariffNote: true,
+    withTariffNote: 8,
   },
 ];
 
@@ -193,7 +193,7 @@ const TableAdaptive: React.FC = () => {
           </PricingHeader>
           <ButtonFeature><ButtonTable text={plan.name === 'FREE' ? "Попробовать" : "Купить"} /></ButtonFeature>
           {plan.features.map((feature, i) => (
-            <PricingFeature key={i} className={plan.withTariffNote && i === plan.features.length - 1 ? 'with-tariff' : ''}>
+            <PricingFeature key={i} className={plan.withTariffNote && i === plan.withTariffNote ? 'with-tariff' : ''}>
               {feature}
             </PricingFeature>
           ))}

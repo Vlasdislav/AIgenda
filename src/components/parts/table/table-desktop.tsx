@@ -76,14 +76,21 @@ const HighlightText = styled.span`
   display: inline-block;
 `;
 
-const pricingData = [
-  { plan: 'FREE', price: '0₽ / мес', options: ['Попробовать', '180', '40 мин', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Низкий', '-', '-', 'По ссылке'] },
-  { plan: 'START', price: '990₽ / мес', options: ['Купить', '540', '1,5 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', '-', 'Да', 'По ссылке'] },
-  { plan: 'MAX', price: '1890₽ / мес', options: ['Купить', '1200', '4 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', 'Да', 'Да', 'По ссылке'], highlight: true },
-  { plan: 'PRO MAX', price: '3190₽ / мес', options: ['Купить', '2400', '4 часа', 'Да', 'Да', 'Да', 'Zoom, Google Meet, Телемост', 'Высокий', 'Да', 'Да', 'По ссылке'] },
+type pricingDataType = {
+  plan: string,
+  price: number,
+  options: React.ReactNode[],
+  highlight?: boolean
+}
+
+const pricingData: pricingDataType[] = [
+  { plan: 'FREE', price: 0, options: ['Попробовать', '180', '40 мин', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Низкий', '-', '-', 'По ссылке'] },
+  { plan: 'START', price: 990, options: ['Купить', '540', '1,5 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', '-', 'Да', 'По ссылке'] },
+  { plan: 'MAX', price: 1890, options: ['Купить', '1200', '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'], highlight: true },
+  { plan: 'PRO MAX', price: 3190, options: ['Купить', '2400', '4 часа', 'Да', 'Да', 'Да', <span>Zoom, Google <br/> Meet, Телемост</span>, 'Высокий', 'Да', 'Да', 'По ссылке'] },
 ];
 
-const namesRows = ['Минуты', 'Длина видео', 'Транскрипция', 'Протокол встречи', 'Загрузка видео', 'Интеграция с площадками видеоконференций', 'Приоритет обработки', 'Редактирование транскрипции', 'Экспорт конспекта', 'Возможность делиться записью']
+const namesRows = ['Минуты', 'Длина видео', 'Транскрипция', 'Протокол встречи', 'Загрузка видео', <span>Интеграция <br/> с площадками <br/> видеоконференций</span>, 'Приоритет обработки', 'Редактирование транскрипции', 'Экспорт конспекта', 'Возможность делиться записью']
 
 const TableDesktop = () => {
   return (
@@ -99,7 +106,7 @@ const TableDesktop = () => {
       <TableRow className="title">Цена</TableRow>
       {pricingData.map((data, index) => (
         <TableRow key={index} className={`price ${data.highlight ? 'highlight' : ''}`}>
-          {data.price}
+          {`${data.price}₽ / мес`}
         </TableRow>
       ))}
 
