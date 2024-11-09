@@ -17,7 +17,11 @@ const ProtocolSection = styled.section`
   display: flex;
   align-items: center;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1500px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 1100px) {
     flex-direction: column;
     text-align: center;
     padding: 24px;
@@ -32,8 +36,11 @@ const ProtocolContent = styled.div`
   margin-bottom: 150px;
   max-width: 485px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1500px) {
     margin-bottom: 32px;
+  }
+
+  @media (max-width: 1100px) {
     max-width: 648px;
   }
   
@@ -48,7 +55,7 @@ const ProtocolTitle = styled.h2`
   font-size: 34px;
   margin-bottom: 16px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     font-size: 30px;
     line-height: 38px;
     width: 350px;
@@ -66,12 +73,15 @@ const ProtocolTitle = styled.h2`
 
 const ProtocolDescription = styled.p`
   line-height: 27px;
-  font-size: 22px;
   margin-bottom: 32px;
 
-  @media (max-width: 1023px) {
-    font-size: 18px;
+  @media (max-width: 1500px) {
+    width: 450px;
+  }
+
+  @media (max-width: 1100px) {
     line-height: 22px;
+    width: 100%;
   }
   
   @media (max-width: 639px) {
@@ -83,15 +93,7 @@ const ProtocolDescription = styled.p`
 `;
 
 const ProtocolImage = styled.div`
-  @media (max-width: 1535px) {
-    width: 600px;
-  }
-
-  @media (max-width: 1279px) {
-    width: 360px;
-  }
-
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     width: 100%;
   }
 `
@@ -106,7 +108,7 @@ const ProtocolBadges = styled.div`
   border-radius: 0 60px 0 0;
   background-color: #EBEBEB;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1500px) {
     display: none;
   }
 `;
@@ -140,7 +142,11 @@ const PricingSection = styled.section`
   flex-direction: column;
   padding: 70px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1500px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 1100px) {
     padding: 24px;
   }
 
@@ -155,7 +161,7 @@ const PricingTitle = styled.h2`
   font-family: 'Unbounded', sans-serif;
   margin-bottom: 16px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     font-size: 30px;
     line-height: 30px;
   }
@@ -169,20 +175,21 @@ const PricingTitle = styled.h2`
 `;
 
 const PricingDescription = styled.p`
-  font-size: 22px;
   line-height: 27px;
   color: #474747;
   margin-bottom: 64px;
   max-width: 748px;
 
-  @media (max-width: 1023px) {
-    font-size: 18px;
+  @media (max-width: 1500px) {
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 1100px) {
     line-height: 22px;
     margin-bottom: 48px;
   }
 
   @media (max-width: 639px) {
-    font-size: 14px;
     line-height: 18px;
     margin-top: 16px;
     margin-bottom: 32px;
@@ -194,7 +201,7 @@ export default function MainLanding() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 1023);
+            setIsMobile(window.innerWidth <= 1100);
         };
 
         handleResize();

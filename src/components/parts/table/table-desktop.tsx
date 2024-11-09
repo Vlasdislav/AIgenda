@@ -45,6 +45,14 @@ const TableRow = styled.div`
   &.highlight {
     color: #EC279D;
   }
+
+  @media (max-width: 1500px) {
+    font-size: 18px;
+
+    &.title {
+      width: 200px;
+    }
+  }
 `;
 
 const ColumnHeader = styled(TableRow)`
@@ -54,6 +62,10 @@ const ColumnHeader = styled(TableRow)`
   font-family: 'Unbounded', sans-serif;
   padding: 20px;
   border-top: none;
+
+  @media (max-width: 1500px) {
+    font-size: 24px
+  }
 `;
 
 const HighlightText = styled.span`

@@ -11,7 +11,7 @@ const HeaderTag = styled.header`
   border-radius: 20px;
   position: relative;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     padding: 20px 40px;
   }
 
@@ -44,7 +44,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     display: none;
   }
 `;
@@ -61,7 +61,7 @@ const Buttons = styled.div`
     margin-left: 24px;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     display: none;
   }
 `;
@@ -73,7 +73,7 @@ const AdaptiveButtons = styled.div`
     margin-left: 24px;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1100px) {
     display: flex;
     align-items: center;
   }
@@ -102,7 +102,7 @@ const Dropdown = styled.div`
     text-align: center;
   }
 
-  @media (min-width: 1023px) {
+  @media (min-width: 1100px) {
     display: none;
   }
 `;

@@ -1,4 +1,5 @@
 import "./globals.css";
+import { StyledComponentsRegistry } from "./providers/StyledComponentsRegistry";
 
 export const metadata = {
   title: "AiGenda",
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
       <body
         className="antialiased"
       >
-        {children}
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
