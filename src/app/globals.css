@@ -24,7 +24,7 @@ body {
   justify-content: space-between;
   background-color: #ffffff;
   border-radius: 60px;
-  margin: 32px auto;
+  margin: 32px auto 0 auto;
 }
 
 @media (max-width: 1500px) {
@@ -46,7 +46,7 @@ body {
   .container {
     width: 696px;
     border-radius: 32px;
-    margin: 24px auto;
+    margin: 24px auto 0 auto;
   }
 }
 
@@ -63,7 +63,7 @@ body {
   }
 
   .container {
-    margin: 16px auto;
+    margin: 16px auto 0 auto;
     width: 343px;
     border-radius: 24px;
   }
